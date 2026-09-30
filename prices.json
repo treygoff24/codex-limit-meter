@@ -1,0 +1,40 @@
+{
+  "_note": "USD (API list price) per 1M tokens. Derived from the Codex credit rate card: credits per 1M tokens / 25. 'in' is the rate for UNCACHED input, 'cached' for cached input, 'out' for output (reasoning tokens are billed as output). Codex has no separate cache-write charge.",
+  "_fetched": "2026-09-30",
+  "_sources": {
+    "codex_credit_rate_card": "https://learn.chatgpt.com/docs/pricing#token-rates",
+    "codex_pricing_page": "https://developers.openai.com/codex/pricing",
+    "codex_speed_and_fast_mode": "https://learn.chatgpt.com/docs/agent-configuration/speed",
+    "astra_usage_help": "https://help.openai.com/en/articles/20001516-managing-usage-with-gpt-6-astra-in-work-and-codex",
+    "api_pricing": "https://developers.openai.com/api/docs/pricing",
+    "model_gpt-6.1-sol": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+    "model_gpt-6-sol": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+    "model_gpt-6-astra": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "model_gpt-6-luna": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "model_gpt-5.6-sol": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+    "model_gpt-5.6-terra": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+    "model_gpt-5.6-luna": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+    "model_gpt-5.5": "https://developers.openai.com/api/docs/models/gpt-5.5",
+    "pro_tiers_help": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers"
+  },
+  "_fast_mult": 2.5,
+  "_fast_mult_note": "Fast tier (service_tier 'fast' or 'priority') draws included subscription usage at 2.5x the Standard rate (2x for purchased credits and API).",
+  "_ultrafast_mult": 8.0,
+  "_ultrafast_mult_note": "GPT-6 Astra Ultrafast draws included usage at 8x the Standard rate (6x for purchased credits).",
+  "_long_context": {
+    "threshold_input_tokens": 272000,
+    "input_mult": 2.0,
+    "output_mult": 1.5,
+    "note": "API rule: requests with more than 272K input tokens cost 2x input and cached-input rates, 1.5x output. IGNORED unless --long-context-surcharge is passed: a regression on real busy ticks found long-context turns use less meter per card-dollar, not more."
+  },
+
+  "gpt-6.1-sol":   {"in": 2.0,  "cached": 0.1,  "out": 10.0},
+  "gpt-6-sol":     {"in": 2.0,  "cached": 0.2,  "out": 10.0},
+  "gpt-6-astra":   {"in": 10.0, "cached": 1.0,  "out": 50.0},
+  "gpt-6-luna":    {"in": 0.1,  "cached": 0.01, "out": 0.5},
+  "gpt-5.6-sol":   {"in": 4.0,  "cached": 0.4,  "out": 20.0},
+  "gpt-5.6-terra": {"in": 2.0,  "cached": 0.2,  "out": 12.0},
+  "gpt-5.6-luna":  {"in": 0.2,  "cached": 0.02, "out": 1.2},
+  "gpt-5.5":       {"in": 5.0,  "cached": 0.5,  "out": 30.0},
+  "gpt-daybreak-blue-latest": {"in": 4.0, "cached": 0.4, "out": 20.0}
+}
